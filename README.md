@@ -1,4 +1,4 @@
-# HER, a new Text Format
+# HER, a new Text Format [![Build Status](https://travis-ci.org/hearot/HER.svg?branch=master)](https://travis-ci.org/hearot/HER)
 <img src="https://hearot.it/assets/images/projects/Universe.jpg" width="700">
 
 Search informations about the Syntax and Types using the [Wiki section](https://github.com/hearot/HER/wiki).
