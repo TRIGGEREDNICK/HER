@@ -99,8 +99,8 @@ class Decoder:
                     # list.
                     exec(
                         "self.HER[currentSection][line.split"
-                        "(\" =\")[0][2:-2]].append("
-                        + line.split(" = ", 1)[1] +
+                        "(\" =\")[0][2:-2]].append(" +
+                        line.split(" = ", 1)[1] +
                         ")"
                     )
                 # Then, if it isn't a
