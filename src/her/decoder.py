@@ -52,7 +52,8 @@ class Decoder:
         # that will parse the String
         # and store it as self.HER
         self.parseString(content)
-    def parseString (self, HERLines):
+
+    def parseString(self, HERLines):
         # It declares a string that will
         # be used for storing the
         # current section, or category.
