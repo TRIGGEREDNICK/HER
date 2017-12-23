@@ -9,8 +9,8 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -26,6 +26,7 @@ class Encoder:
     """
     HER Encoder
     """
+
     def __init__(self, HERDict):
         HERString = []
         for key, value in HERDict.items():
@@ -35,14 +36,26 @@ class Encoder:
                     HERString.append("    >> " + str(subkey) + "[]")
                     for tunnelvalue in subvalue:
                         if isinstance(tunnelvalue, str):
-                            listvalue = "\"" + str(tunnelvalue).replace('"', '\"').replace("'", "\'") + "\""
+                            listvalue = "\"" + str(
+                                tunnelvalue).replace('"',
+                                                     '\"').replace("'",
+                                                                   "\'") + "\""
                         else:
                             listvalue = tunnelvalue
-                        HERString.append("    * " + str(subkey) + "[] = " + str(listvalue))
+                        HERString.append(
+                            "    * " + str(
+                                subkey) + "[] = " + str(
+                                    listvalue))
                 else:
                     if isinstance(subvalue, str):
-                        listvalue = "\"" + str(subvalue).replace('"', '\"').replace("'", "\'") + "\""
+                        listvalue = "\"" + str(
+                            subvalue).replace('"',
+                                              '\"').replace("'",
+                                                            "\'") + "\""
                     else:
                         listvalue = subvalue
-                    HERString.append("    * " + str(subkey) + " = " + str(listvalue))
+                    HERString.append(
+                        "    * " + str(
+                            subkey) + " = " + str(
+                                listvalue))
         self.HER = "\n".join(HERString)

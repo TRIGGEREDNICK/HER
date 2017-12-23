@@ -9,8 +9,8 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -22,9 +22,11 @@
 
 
 class Decoder:
+
     """
     HER Decoder
     """
+
     def __init__(self, HERString, isFile=False):
         if isFile is True:
             HERString = HERString.readlines()
@@ -44,7 +46,14 @@ class Decoder:
                     HER[currentSection][line.split("[] =")[0][3:-2]] = []
             elif line.startswith("* "):
                 if line.split(" =")[0][-2:] == "[]":
-                    exec("HER[currentSection][line.split(\" =\")[0][2:-2]].append(" + line.split(" = ")[1] + ")")
+                    exec(
+                        "HER[currentSection][line.split"
+                        "(\" =\")[0][2:-2]].append(" + line.split(" = ")[1] +
+                        ")"
+                    )
                 else:
-                    exec("HER[currentSection][line.split(\" =\")[0][2:]] = " + line.split(" = ")[1])
+                    exec(
+                        "HER[currentSection][line.split"
+                        "(\" =\")[0][2:]] = " + line.split(" = ")[1]
+                    )
         self.HER = HER
