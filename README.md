@@ -4,9 +4,9 @@
 Search informations about the Syntax and Types using the [Wiki section](https://github.com/hearot/HER/wiki).
 
 ## Content table
-  - [0. What's HER?](#what's-her?)
-  - [1. Why shall I use HER?](#why-shall-i-use-her?)
-  - [2. Why HER?](#why-her?)
+  - [What's HER?](#whats-her)
+  - [Why shall I use HER?](#why-shall-i-use-her)
+  - [Why HER?](#why-her)
   - **Python Module**
     - [Installation](#installation)
     - [Import Module](#import-module)
@@ -44,10 +44,8 @@ Feel the difference:
     * Greetings[] = "Spam, Python, Eggs"
 ```
 
-### Why "HER"?
-__Because, if it doesn't want to understant, however, it's right.__
-
-* Like a document, you can read it clearly.
+### Why HER?
+__Because, however, if it isn't right, it's right.__
 
 # Python Module
 
