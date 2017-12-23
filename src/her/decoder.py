@@ -84,7 +84,8 @@ class Decoder:
                 # a List.
                 if line.split(" =", 1)[0][-2:] == "[]":
                     # It declares the List.
-                    self.HER[currentSection][line.split("[] =", 1)[0][3:-2]] = []
+                    self.HER[currentSection][
+                        line.split("[] =", 1)[0][3:-2]] = []
             # It checks if the line is
             # a variable assignment
             # or declaration.
@@ -98,7 +99,8 @@ class Decoder:
                     # list.
                     exec(
                         "self.HER[currentSection][line.split"
-                        "(\" =\")[0][2:-2]].append(" + line.split(" = ", 1)[1] +
+                        "(\" =\")[0][2:-2]].append("
+                        + line.split(" = ", 1)[1] +
                         ")"
                     )
                 # Then, if it isn't a

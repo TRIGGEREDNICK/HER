@@ -21,14 +21,34 @@
 # SOFTWARE.
 
 # It imports the Encoder class
-# from encoder.py
+# from encoder.py.
 from .encoder import Encoder
+# It imports the JSON class, it
+# is needed for JSON-HER converter.
 import json
 
+
 class Json2HER:
+
+    """
+    JSON -> HER converter class
+    """
+
     def __init__(self, JSON):
-        self.JSON = json.loads(JSON)[0]
+        # It stores the passed JSON
+        # under self.JSON.
+        self.JSON = json.loads(JSON)
+        # It calls the convert() function
+        # that will store the HER Document under
+        # self.HER.
         self.convert()
+
     def convert(self):
+        # It initializes the Encoder class
+        # (from encoder.py), creating an
+        # object that will store
+        # the HER Document.
         self.encoderObject = Encoder(self.JSON)
+        # It assigns to self.HER the HER Document taken
+        # from self.encoderObject Object.
         self.HER = self.encoderObject.HER

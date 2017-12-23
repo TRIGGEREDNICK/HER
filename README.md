@@ -13,6 +13,8 @@ Search informations about the Syntax and Types using the [Wiki section](https://
     - [Encode a Dictionary](#encode-a-dictionary)
     - [Decode a String](#decode-a-string)
     - [Decode a File](#decode-a-file)
+    - [Convert HER to JSON](#convert-her-to-json)
+    - [Convert JSON to HER](#convert-json-to-her)
 
 ## What's HER?
 HER is text format, like XML/Json. The difference is that HER is easier than others.
@@ -88,7 +90,7 @@ Just use the `Decoder` class.
 Call the `__init__` function assigning the object to a variable, then the `Decoded Dictionary` will be available into the `self.HER` variable of the object.
 ```python
 import her
-decoderObject = her.Decode("- Category -\n    * hello world = true")
+decoderObject = her.Decoder("- Category -\n    * hello world = True")
 print(decoderObject.HER)
 ```
 
@@ -104,11 +106,43 @@ Call the `__init__` function assigning the object to a variable, then the `Decod
 Remember: the second parameter **must** be `True` and the first parameter must be a `File` object.
 ```python
 import her
-decoderObject = her.Decode(open("file_path", "r"), True)
+decoderObject = her.Decoder(open("file_path", "r"), True)
 print(decoderObject.HER)
 ```
 
 Output:
 ```
 {'Category':{'hello world':True}}
+```
+
+## Convert JSON to HER
+Just use the `Json2HER` class.
+Call the `__init__` function assigning the object to a variable, then the `HER Document` will be available into the `self.HER` variable of the object.
+
+```python
+import her
+json2HERObject = her.Json2HER("{\"Category\":{\"Cool\":true}}")
+print(json2HERObject.HER)
+```
+
+Output:
+```
+- Category -
+    * Cool = True
+```
+
+## Convert HER to JSON
+Just use the `HER2Json` class.
+Call the `__init__` function assigning the object to a variable, then the `JSON` will be available into the `self.JSON` variable of the object.
+
+Remember: the second parameter **must** be `True` if the first parameter is `File` object.
+```python
+import her
+HER2JsonObject = her.HER2Json("- Category -\n    * Cool = True")
+print(HER2JsonObject.JSON)
+```
+
+Output:
+```
+{"Category":{"Cool":true}}
 ```
