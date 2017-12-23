@@ -22,11 +22,10 @@
 
 
 class Decoder:
-
     """
     HER Decoder
     """
-    def __init__(self, HERString, isFile = False):
+    def __init__(self, HERString, isFile=False):
         if isFile is True:
             HERString = HERString.readlines()
         else:

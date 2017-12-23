@@ -22,7 +22,7 @@
 
 
 class Encoder:
-    
+
     """
     HER Encoder
     """
@@ -35,13 +35,13 @@ class Encoder:
                     HERString.append("    >> " + str(subkey) + "[]")
                     for tunnelvalue in subvalue:
                         if isinstance(tunnelvalue, str):
-                            listvalue = "\"" + str(tunnelvalue).replace('"','\"').replace("'", "\'") + "\""
+                            listvalue = "\"" + str(tunnelvalue).replace('"', '\"').replace("'", "\'") + "\""
                         else:
                             listvalue = tunnelvalue
                         HERString.append("    * " + str(subkey) + "[] = " + str(listvalue))
                 else:
                     if isinstance(subvalue, str):
-                        listvalue = "\"" + str(subvalue).replace('"','\"').replace("'", "\'") + "\""
+                        listvalue = "\"" + str(subvalue).replace('"', '\"').replace("'", "\'") + "\""
                     else:
                         listvalue = subvalue
                     HERString.append("    * " + str(subkey) + " = " + str(listvalue))
