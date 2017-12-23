@@ -28,34 +28,97 @@ class Encoder:
     """
 
     def __init__(self, HERDict):
-        HERString = []
+        # It declares the list
+        # of the HER document
+        # lines.
+        self.HERString = []
+        # It calls the parseDictionary,
+        # that will store the list
+        # into self.HERString.
+        self.parseDictionary(HERDict)
+        # It creates the string,
+        # joining the content using
+        # the \n character.
+        self.HER = "\n".join(self.HERString)
+
+    def parseDictionary(self, HERDict):
+        # The "for-each" starts
         for key, value in HERDict.items():
-            HERString.append("- " + key + " -")
+            # It appends the
+            # Category to the
+            # HER Document lines List.
+            self.HERString.append("- " + key + " -")
+            # Another "for-each" starts,
+            # it will read the values of the category,
+            # the sub-values of the entire
+            # Dictionary.
             for subkey, subvalue in value.items():
+                # It checks if the sub-value
+                # is a list.
                 if isinstance(subvalue, list):
-                    HERString.append("    >> " + str(subkey) + "[]")
+                    # It's a list, so
+                    # it declares the list
+                    # using HER Syntax.
+                    self.HERString.append("    >> " + str(subkey) + "[]")
+                    # Another "for-each" starts,
+                    # it will read the values of the
+                    # ipotetic list (sub-value of the sub-value),
+                    # we will call them: "tunnelvalues"
                     for tunnelvalue in subvalue:
+                        # It checks if the
+                        # tunnelvalue is a string.
                         if isinstance(tunnelvalue, str):
+                            # It's a string, so
+                            # it escapes it and
+                            # it assigns the value
+                            # to listvalue.
                             listvalue = "\"" + str(
                                 tunnelvalue).replace('"',
                                                      '\"').replace("'",
                                                                    "\'") + "\""
+                        # Then, if it isn't
+                        # a string, it doesn't
+                        # escape anything.
                         else:
+                            # It just assigns
+                            # the value to
+                            # listvalue.
                             listvalue = tunnelvalue
-                        HERString.append(
+                        # It appends the listvalue,
+                        # just the escaped tunnelvalue,
+                        # to HER Document lines List.
+                        self.HERString.append(
                             "    * " + str(
                                 subkey) + "[] = " + str(
                                     listvalue))
+                # Then, if it isn't
+                # a list, it just
+                # uses the HER Syntax and
+                # append the key-value (variable).
                 else:
+                    # It checks if it's
+                    # a string
                     if isinstance(subvalue, str):
+                        # It's a string, so
+                        # it escapes it and
+                        # it assigns the value
+                        # to listvalue.
                         listvalue = "\"" + str(
                             subvalue).replace('"',
                                               '\"').replace("'",
                                                             "\'") + "\""
+                    # Then, if it isn't
+                    # a string, it doesn't
+                    # escape anything.
                     else:
+                        # It just assigns
+                        # the value to
+                        # listvalue.
                         listvalue = subvalue
-                    HERString.append(
+                    # It appends the listvalue,
+                    # just the escaped subvalue,
+                    # to HER Document lines List.
+                    self.HERString.append(
                         "    * " + str(
                             subkey) + " = " + str(
                                 listvalue))
-        self.HER = "\n".join(HERString)

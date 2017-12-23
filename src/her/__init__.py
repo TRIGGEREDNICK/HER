@@ -20,6 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-
+# It imports the Decoder class
+# from decoder.py
 from .decoder import Decoder
+# It imports the Encoder class
+# from encoder.py
 from .encoder import Encoder
