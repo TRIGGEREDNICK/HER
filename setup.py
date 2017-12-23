@@ -22,16 +22,23 @@
 
 
 from distutils.core import setup
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except(IOError, ImportError):
+    long_description = open('README.md').read()
+
 setup(
     name='her',
     packages=['her'],
     package_dir={'': 'src'},
-    version='1.0.2',
+    version='1.0.3',
     description='A new file format',
+    long_description=long_description
     author='Gabriel Hearot',
     author_email='gabriel@hearot.it',
     url='https://github.com/hearot/HER',
-    download_url='https://github.com/hearot/HER/archive/v1.0.2.tar.gz',
+    download_url='https://github.com/hearot/HER/archive/v1.0.3.tar.gz',
     keywords=['python', 'her'],
     classifiers=[]
 )
