@@ -34,7 +34,7 @@ setup(
     package_dir={'': 'src'},
     version='1.0.3',
     description='A new file format',
-    long_description=long_description
+    long_description=long_description,
     author='Gabriel Hearot',
     author_email='gabriel@hearot.it',
     url='https://github.com/hearot/HER',
