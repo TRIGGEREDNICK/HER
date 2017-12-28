@@ -36,13 +36,13 @@ setup(
     name='her',
     packages=['her'],
     package_dir={'': 'src'},
-    version='1.1.0',
+    version='1.1.1',
     description='A new file format',
     long_description=long_description,
     author='Gabriel Hearot',
     author_email='gabriel@hearot.it',
     url='https://github.com/hearot/HER',
-    download_url='https://github.com/hearot/HER/archive/v1.1.0.tar.gz',
+    download_url='https://github.com/hearot/HER/archive/v1.1.1.tar.gz',
     keywords=['python', 'her'],
     classifiers=[]
 )
