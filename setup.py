@@ -22,6 +22,7 @@
 
 
 from distutils.core import setup
+import sys
 try:
     if sys.argv[1] == "egg_info":
         long_description = "A new file format"
