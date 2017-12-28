@@ -23,9 +23,17 @@
 
 from distutils.core import setup
 import sys
+
 try:
     if sys.argv[1] == "egg_info":
         long_description = "A new file format"
+    else:
+        try:
+            import pypandoc
+            long_description = pypandoc.convert('README.md', 'rst')
+        except(IOError, ImportError):
+            long_description = open('README.md').read()
+
 except(IndexError):
     try:
         import pypandoc
@@ -37,13 +45,13 @@ setup(
     name='her',
     packages=['her'],
     package_dir={'': 'src'},
-    version='1.1.1',
+    version='1.1.2',
     description='A new file format',
     long_description=long_description,
     author='Gabriel Hearot',
     author_email='gabriel@hearot.it',
     url='https://github.com/hearot/HER',
-    download_url='https://github.com/hearot/HER/archive/v1.1.1.tar.gz',
+    download_url='https://github.com/hearot/HER/archive/v1.1.2.tar.gz',
     keywords=['python', 'her'],
     classifiers=[]
 )
