@@ -27,15 +27,15 @@ class Decoder:
     HER Decoder
     """
 
-    def __init__(self, HERString, isFile=False):
+    def __init__(self, HERString):
         # It checks if the first parameter is
         # a file using
         # the second parameter.
-        if isFile is True:
-            # Now, it reads the lines as
-            # a file object.
+        try:
+            # It checks if HERString
+            # is a file.
             HERString = HERString.readlines()
-        else:
+        except AttributeError:
             # It's not a File, I try to
             # read it using splitlines()
             # function.

@@ -103,10 +103,10 @@ Output:
 Just use the `Decoder` class.
 Call the `__init__` function assigning the object to a variable, then the `Decoded Dictionary` will be available into the `self.HER` variable of the object.
 
-Remember: the second parameter **must** be `True` and the first parameter must be a `File` object.
+Remember: The first parameter must be a `File` object and it must have a `readlines` attribute.
 ```python
 import her
-decoderObject = her.Decoder(open("file_path", "r"), True)
+decoderObject = her.Decoder(open("file_path", "r"))
 print(decoderObject.HER)
 ```
 
@@ -135,7 +135,6 @@ Output:
 Just use the `HER2Json` class.
 Call the `__init__` function assigning the object to a variable, then the `JSON` will be available into the `self.JSON` variable of the object.
 
-Remember: the second parameter **must** be `True` if the first parameter is `File` object.
 ```python
 import her
 HER2JsonObject = her.HER2Json("- Category -\n    * Cool = True")

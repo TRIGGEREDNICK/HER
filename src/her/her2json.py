@@ -34,12 +34,7 @@ class HER2Json:
     HER -> JSON converter class
     """
 
-    def __init__(self, HERLines, isFile=False):
-        # It declares self.isFile, that
-        # will be used to store
-        # a boolean that depends on the second parameter
-        # (isFile).
-        self.isFile = isFile
+    def __init__(self, HERLines):
         # It declares self.HERLines, that
         # will be used to store the first
         # parameter (HERLines).
@@ -56,7 +51,7 @@ class HER2Json:
         # pass self.HERLines (see line 42) and
         # self.isFile (see line 37) as
         # parameters.
-        self.decoderObject = Decoder(self.HERLines, self.isFile)
+        self.decoderObject = Decoder(self.HERLines)
         # It stores the JSON
         # under self.JSON.
         self.JSON = json.dumps(self.decoderObject.HER, ensure_ascii=False)
