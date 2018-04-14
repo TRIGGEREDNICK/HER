@@ -20,18 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# It imports the JSON class, it
-# is needed for JSON-HER converter.
-import json
-# It imports the Json2HER class, it
-# is needed for JSON to HER conversion.
-from .json2her import Json2HER
-# It imports the HER2Json class, it
-# is needed for HER to JSON conversion.
-from .her2json import HER2Json
+"""
+her.core
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It contains the main classes.
+"""
+
 # It imports the Decoder class
-# from decoder.py.
 from .decoder import Decoder
 # It imports the Encoder class
-# from encoder.py.
 from .encoder import Encoder

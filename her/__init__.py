@@ -9,8 +9,8 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -20,22 +20,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+"""
+her
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A new simple text format.
+"""
 
-from distutils.core import setup
-
-# with open('README.rst', 'r') as f:
-#    readme = f.read()
-
-setup(
-    name='her',
-    packages=['her'],
-    version='1.2',
-    description='A new file format',
-    long_description='',
-    author='Gabriel Hearot',
-    author_email='gabriel@hearot.it',
-    url='https://github.com/hearot/HER',
-    download_url='https://github.com/hearot/HER/archive/v1.2.tar.gz',
-    keywords=['python', 'her'],
-    classifiers=[]
-)
+__author__ = 'pyTeens'
+__license__ = 'GNU GENERAL PUBLIC LICENSE'
+__url__ = 'https://github.com/hearot/HER'
+__package__ = 'her'
+__version__ = '1.3.0'

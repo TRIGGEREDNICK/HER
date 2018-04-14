@@ -20,34 +20,58 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+"""
+her.core.encoder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It contains the Encoder class.
+
+It could be used to encode a dictionary and convert it into
+an HER text.
+"""
+
 
 class Encoder:
 
     """
-    HER Encoder
+    Class for dictionary conversion
+    into HER text.
     """
 
-    def __init__(self, HERDict):
+    def __init__(self, her_dict):
+        """
+        It initializes the object by trying
+        to parse the given parameter.
+
+        :param her_dict: The dictionary you want to convert.
+        :type her_dict: dict
+        """
         # It declares the list
         # of the HER document
         # lines.
-        self.HERString = []
-        # It calls the parseDictionary,
+        self.her_string = []
+        # It calls the parse_dictionary,
         # that will store the list
-        # into self.HERString.
-        self.parseDictionary(HERDict)
+        # into self.her_string.
+        self.parse_dictionary(her_dict)
         # It creates the string,
         # joining the content using
         # the \n character.
-        self.HER = "\n".join(self.HERString)
+        self.HER = "\n".join(self.her_string)
 
-    def parseDictionary(self, HERDict):
+    def parse_dictionary(self, her_dict):
+        """
+        It parses and convert the dictionary
+        into an HER text.
+
+        :param her_dict: The dictionary you want to convert.
+        :type her_dict: dict
+        """
         # The "for-each" starts
-        for key, value in HERDict.items():
+        for key, value in her_dict.items():
             # It appends the
             # Category to the
             # HER Document lines List.
-            self.HERString.append("- " + key + " -")
+            self.her_string.append("- " + key + " -")
             # Another "for-each" starts,
             # it will read the values of the category,
             # the sub-values of the entire
@@ -59,7 +83,7 @@ class Encoder:
                     # It's a list, so
                     # it declares the list
                     # using HER Syntax.
-                    self.HERString.append("    >> " + str(subkey) + "[]")
+                    self.her_string.append("    >> " + str(subkey) + "[]")
                     # Another "for-each" starts,
                     # it will read the values of the
                     # ipotetic list (sub-value of the sub-value),
@@ -87,7 +111,7 @@ class Encoder:
                         # It appends the listvalue,
                         # just the escaped tunnelvalue,
                         # to HER Document lines List.
-                        self.HERString.append(
+                        self.her_string.append(
                             "    * " + str(
                                 subkey) + "[] = " + str(
                                     listvalue))
@@ -118,7 +142,7 @@ class Encoder:
                     # It appends the listvalue,
                     # just the escaped subvalue,
                     # to HER Document lines List.
-                    self.HERString.append(
+                    self.her_string.append(
                         "    * " + str(
                             subkey) + " = " + str(
                                 listvalue))

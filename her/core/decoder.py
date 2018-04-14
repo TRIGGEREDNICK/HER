@@ -20,30 +20,44 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+"""
+her.core.decoder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It contains the Decoder class.
+
+It could be used to decode HER and convert it into
+a dictionary.
+"""
+
 
 class Decoder:
 
     """
-    HER Decoder
+    Class for HER decoding, or better, 
+    converting it into a dictionary.
     """
 
-    def __init__(self, HERString):
-        # It checks if the first parameter is
-        # a file using
-        # the second parameter.
+    def __init__(self, her_string):
+        """
+        It initializes the object by trying
+        to parse the given parameter.
+
+        :param her_string: A file or a string coded in HER.
+        :type her_string: file or str
+        """
         try:
-            # It checks if HERString
+            # It checks if her_string
             # is a file.
-            HERString = HERString.readlines()
+            her_string = her_string.readlines()
         except AttributeError:
             # It's not a File, I try to
             # read it using splitlines()
             # function.
-            HERString = HERString.splitlines()
+            her_string = her_string.splitlines()
         # It's got the content, but there are
         # blank characters before a normal character,
         # so It strips them.
-        content = [x.strip() for x in HERString]
+        content = [x.strip() for x in her_string]
         # It declares the HER
         # Dictionary, that will contain
         # the parsed Dictionary.
@@ -51,15 +65,22 @@ class Decoder:
         # It calls the parseString function
         # that will parse the String
         # and store it as self.HER
-        self.parseString(content)
+        self.parse_string(content)
 
-    def parseString(self, HERLines):
+    def parse_string(self, her_lines):
+        """
+        It parses the string and convert it
+        into a dictionary.
+        
+        :param her_lines: A list of the lines of the string. 
+        :type her_lines: list 
+        """
         # It declares a string that will
         # be used for storing the
         # current section, or category.
-        currentSection = ""
+        current_section = ""
         # The "for-each" starts
-        for line in HERLines:
+        for line in her_lines:
             # It checks if the line is
             # a comment or not.
             if line.startswith("#"):
@@ -72,11 +93,11 @@ class Decoder:
             elif line.startswith("- "):
                 # It strips the "-" and then
                 # it store the Category into
-                # currentSection variable.
-                currentSection = line[2:-2]
+                # current_section variable.
+                current_section = line[2:-2]
                 # It declare a Dictionary, that
                 # will contain Category elements.
-                self.HER[currentSection] = {}
+                self.HER[current_section] = {}
             # It checks if the line is
             # a List Declaration.
             elif line.startswith(">> "):
@@ -84,7 +105,7 @@ class Decoder:
                 # a List.
                 if line.split(" =", 1)[0][-2:] == "[]":
                     # It declares the List.
-                    self.HER[currentSection][
+                    self.HER[current_section][
                         line.split("[] =", 1)[0][3:-2]] = []
             # It checks if the line is
             # a variable assignment
@@ -98,7 +119,7 @@ class Decoder:
                     # to assign the value to the
                     # list.
                     exec(
-                        "self.HER[currentSection][line.split"
+                        "self.HER[current_section][line.split"
                         "(\" =\")[0][2:-2]].append(" +
                         line.split(" = ", 1)[1] +
                         ")"
@@ -113,6 +134,6 @@ class Decoder:
                     # to assign the value to a
                     # variable.
                     exec(
-                        "self.HER[currentSection][line.split"
+                        "self.HER[current_section][line.split"
                         "(\" =\")[0][2:]] = " + line.split(" = ", 1)[1]
                     )
