@@ -119,7 +119,7 @@ class Decoder:
                     # to assign the value to the
                     # list.
                     exec(
-                        "self.HER[current_section][line.split"
+                        "self.HER[current_section][line.split" +
                         "(\" =\")[0][2:-2]].append(" +
                         line.split(" = ", 1)[1] +
                         ")"
