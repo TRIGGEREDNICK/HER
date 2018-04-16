@@ -204,7 +204,7 @@ Output:
 .. _Decode a File: #decode-a-file
 .. _Convert HER to JSON: #convert-her-to-json
 .. _Convert JSON to HER: #convert-json-to-her
-.. _Documentation: http://her-project.readthedocs.org
+.. _Documentation: http://her.readthedocs.org
 
 .. |Build Status| image:: https://travis-ci.org/hearot/HER.svg?branch=master
    :target: https://travis-ci.org/hearot/HER
