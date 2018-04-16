@@ -22,33 +22,55 @@
 
 # It imports the Encoder class
 # from encoder.py.
-from .encoder import Encoder
-# It imports the JSON class, it
-# is needed for JSON-HER converter.
+from her.core.encoder import Encoder
+# It imports the json class, it
+# is needed for json-HER converter.
 import json
 
+"""
+her.json_her.json_converter.JSON
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It contains the JSON class.
 
-class Json2HER:
+It could be used to convert JSON to
+HER text.
+"""
+
+
+class JSON:
 
     """
-    JSON -> HER converter class
+    JSON to HER converter.
     """
 
-    def __init__(self, JSON):
+    def __init__(self, json_string):
+        """
+        It initializes the object and
+        tries to convert the JSON into HER
+        text.
+
+        :param json_string: The JSON string.
+        :type json_string: str
+        """
         # It stores the passed JSON
-        # under self.JSON.
-        self.JSON = json.loads(JSON)
+        # under self.json.
+        self.json = json.loads(json_string)
         # It calls the convert() function
         # that will store the HER Document under
         # self.HER.
+        self.encoder_object = None
+        self.HER = None
         self.convert()
 
     def convert(self):
+        """
+        It converts the JSON into HER text.
+        """
         # It initializes the Encoder class
         # (from encoder.py), creating an
         # object that will store
         # the HER Document.
-        self.encoderObject = Encoder(self.JSON)
+        self.encoder_object = Encoder(self.json)
         # It assigns to self.HER the HER Document taken
         # from self.encoderObject Object.
-        self.HER = self.encoderObject.HER
+        self.HER = self.encoder_object.HER

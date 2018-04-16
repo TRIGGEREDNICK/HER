@@ -20,38 +20,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# It imports the Decoder class
-# from decoder.py.
-from .decoder import Decoder
-# It imports the JSON class, it
-# is needed for JSON-HER converter.
-import json
+"""
+her.json_her
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It contains the JSON to HER and HER to JSON
+classes.
+"""
 
-
-class HER2Json:
-
-    """
-    HER -> JSON converter class
-    """
-
-    def __init__(self, HERLines):
-        # It declares self.HERLines, that
-        # will be used to store the first
-        # parameter (HERLines).
-        self.HERLines = HERLines
-        # It calls the convert() function,
-        # that will convert HER to JSON and
-        # it will store the JSON into
-        # self.JSON.
-        self.convert()
-
-    def convert(self):
-        # It initializes an object using
-        # Decoder class (from decoder.py) and
-        # pass self.HERLines (see line 42) and
-        # self.isFile (see line 37) as
-        # parameters.
-        self.decoderObject = Decoder(self.HERLines)
-        # It stores the JSON
-        # under self.JSON.
-        self.JSON = json.dumps(self.decoderObject.HER, ensure_ascii=False)
+# It imports the HER-to-JSON class
+from .her_converter import HER
+# It imports the JSON-to-HER class
+from .json_converter import JSON
