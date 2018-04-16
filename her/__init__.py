@@ -26,6 +26,11 @@ her
 A new simple text format.
 """
 
+# noinspection PyUnresolvedReferences
+import her.core
+# noinspection PyUnresolvedReferences
+import her.json_her
+
 __author__ = 'pyTeens'
 __license__ = 'GNU GENERAL PUBLIC LICENSE'
 __url__ = 'https://github.com/hearot/HER'
