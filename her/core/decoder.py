@@ -33,7 +33,7 @@ a dictionary.
 class Decoder:
 
     """
-    Class for HER decoding, or better, 
+    Class for HER decoding, or better,
     converting it into a dictionary.
     """
 
@@ -71,9 +71,9 @@ class Decoder:
         """
         It parses the string and convert it
         into a dictionary.
-        
-        :param her_lines: A list of the lines of the string. 
-        :type her_lines: list 
+
+        :param her_lines: A list of the lines of the string.
+        :type her_lines: list
         """
         # It declares a string that will
         # be used for storing the

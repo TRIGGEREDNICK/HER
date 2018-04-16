@@ -23,19 +23,19 @@
 
 from distutils.core import setup
 
-# with open('README.rst', 'r') as f:
-#    readme = f.read()
+with open('README.rst', 'r') as f:
+    readme = f.read()
 
 setup(
     name='her',
     packages=['her'],
-    version='1.2',
+    version='1.3.0',
     description='A new file format',
-    long_description='',
+    long_description=readme,
     author='Gabriel Hearot',
     author_email='gabriel@hearot.it',
     url='https://github.com/hearot/HER',
-    download_url='https://github.com/hearot/HER/archive/v1.2.tar.gz',
+    download_url='https://github.com/hearot/HER/archive/v1.3.0.tar.gz',
     keywords=['python', 'her'],
     classifiers=[]
 )
