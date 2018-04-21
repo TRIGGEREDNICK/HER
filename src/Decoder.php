@@ -4,6 +4,7 @@ namespace hearot\HER;
 
 class Decoder
 {
-    public function __construct(){
+    public function __construct()
+    {
     }
 }
