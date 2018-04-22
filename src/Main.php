@@ -2,7 +2,7 @@
 
 namespace hearot\HER;
 
-class Encoder
+class Main
 {
     private $array;
     private $HER = null;
