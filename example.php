@@ -9,5 +9,5 @@ $array = [
 ];
 $array = json_encode($array);
 
-$HER = new \hearot\HER\Encoder($array);
+$HER = new \hearot\HER\Main($array);
 echo $HER->toHer();
