@@ -20,8 +20,11 @@ class Encoder
             if (isset($value)) {
                 $this->HER .= '- '.$arg.' -'.PHP_EOL;
                 foreach ($value as $f => $v) {
-                	if(strpos($f, '#') === 0) break 1;
-                	else $this->HER .= self::INDENT.'* '.$f.' = '.$v.PHP_EOL;
+                    if (strpos($f, '#') === 0) {
+                        break 1;
+                    } else {
+                        $this->HER .= self::INDENT.'* '.$f.' = '.$v.PHP_EOL;
+                    }
                 }
             } else {
                 //$this->HER .= '* '.$arg.PHP_EOL; /* to fix */
