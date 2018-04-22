@@ -2,10 +2,11 @@
 
 namespace hearot\HER;
 
-class Encoder {
-	private $array;
-	private $HER = NULL;
-	const INDENT = '    ';
+class Encoder
+{
+    private $array;
+    private $HER = null;
+    const INDENT = '    ';
 
 	public function __construct($array){
 		$this->array = (strpos($array, '{') === 0) ? json_decode($array, true) : $array;
