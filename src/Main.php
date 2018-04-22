@@ -10,7 +10,7 @@ class Main
 
     public function __construct($array)
     {
-        $this->array = (strpos($array, '{') === 0) ? json_decode($array, true) : $array;
+        $this->array = $array;
     }
 
     public function toHER()
@@ -32,5 +32,14 @@ class Main
         }
 
         return $this->HER;
+    }
+
+    public function toJSON(){
+    	$array = $this->toArray();
+    	return json_encode($array);
+    }
+
+    public function toArray(){
+    	
     }
 }
