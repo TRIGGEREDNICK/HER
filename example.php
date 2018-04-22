@@ -5,12 +5,12 @@ require_once __DIR__.'/vendor/autoload.php';
 $array = [
     'Category' => [
         'Cool' => 1,
-        'ok' => 1,
+        'ok'   => 1,
     ],
     'Two' => [
-    	'cool' => 0,
-    	'ok' => 0,
-    ]
+        'cool' => 0,
+        'ok'   => 0,
+    ],
 ];
 
 $HER = new \hearot\HER\Main($array);

@@ -39,22 +39,25 @@ class Main
 
     public function toArray()
     {
-    	$i = 0;
-    	foreach(explode(PHP_EOL, $this->array) as $value){
-    		$value = str_replace(' ', '', $value);
+        $i = 0;
+        foreach (explode(PHP_EOL, $this->array) as $value) {
+            $value = str_replace(' ', '', $value);
 
-    		if(strpos($value, '#') === 0) break 1;
+            if (strpos($value, '#') === 0) {
+                break 1;
+            }
 
-    		if(strpos($value, '-') === 0){
-    			$value = str_replace('-', '', $value);
-    			$i = $value;
-    		} elseif(strpos($value, '*') === 0){
-    			$value = str_replace('*', '', $value);
-    			$value = explode('=', $value, 2);
-    			$arg[$i][] = [$value[0] => $value[1]];
-    		}
-    		unset($value);
-    	}
-    	return $arg;
+            if (strpos($value, '-') === 0) {
+                $value = str_replace('-', '', $value);
+                $i = $value;
+            } elseif (strpos($value, '*') === 0) {
+                $value = str_replace('*', '', $value);
+                $value = explode('=', $value, 2);
+                $arg[$i][] = [$value[0] => $value[1]];
+            }
+            unset($value);
+        }
+
+        return $arg;
     }
 }
