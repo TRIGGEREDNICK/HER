@@ -34,12 +34,14 @@ class Main
         return $this->HER;
     }
 
-    public function toJSON(){
-    	$array = $this->toArray();
-    	return json_encode($array);
+    public function toJSON()
+    {
+        $array = $this->toArray();
+
+        return json_encode($array);
     }
 
-    public function toArray(){
-    	
+    public function toArray()
+    {
     }
 }
