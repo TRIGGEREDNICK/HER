@@ -20,11 +20,7 @@ class Main
             if (isset($value)) {
                 $this->HER .= '- '.$arg.' -'.PHP_EOL;
                 foreach ($value as $f => $v) {
-                    if (strpos($f, '#') === 0) {
-                        break 1;
-                    } else {
-                        $this->HER .= self::INDENT.'* '.$f.' = '.$v.PHP_EOL;
-                    }
+                    $this->HER .= self::INDENT.'* '.$f.' = '.$v.PHP_EOL;
                 }
             } else {
                 //$this->HER .= '* '.$arg.PHP_EOL; /* to fix */
@@ -43,5 +39,22 @@ class Main
 
     public function toArray()
     {
+    	$i = 0;
+    	foreach(explode(PHP_EOL, $this->array) as $value){
+    		$value = str_replace(' ', '', $value);
+
+    		if(strpos($value, '#') === 0) break 1;
+
+    		if(strpos($value, '-') === 0){
+    			$value = str_replace('-', '', $value);
+    			$i = $value;
+    		} elseif(strpos($value, '*') === 0){
+    			$value = str_replace('*', '', $value);
+    			$value = explode('=', $value, 2);
+    			$arg[$i][] = [$value[0] => $value[1]];
+    		}
+    		unset($value);
+    	}
+    	return $arg;
     }
 }
