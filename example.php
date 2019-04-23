@@ -1,24 +1,23 @@
 <?php
 
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/HER.php';
 
 $array = [
-    'Category' => [
-        'Cool' => 1,
-        'ok'   => 1,
-    ],
-    'Two' => [
-        'cool' => 0,
-        'ok'   => 0,
-    ],
+	'Category' => [
+		'Cool' => 1,
+		'ok'   => 1,
+	],
+	'Two' => [
+		'cool' => 0,
+		'ok'   => 0,
+	],
 ];
 
-$HER = new \hearot\HER\Main($array);
-$encoded = $HER->toHer();
-
+$encoded = her_encode($array);
 echo $encoded.PHP_EOL;
-unset($HER);
 
-$HER = new \hearot\HER\Main($encoded);
-print_r($HER->toArray());
-echo PHP_EOL.$HER->toJSON();
+$decoded = her_decode($encoded);
+print_r($decoded);
+
+$json = json_encode($decoded);
+echo $json;
