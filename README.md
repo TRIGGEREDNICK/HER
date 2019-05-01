@@ -1,7 +1,7 @@
 HER, a new Text Format |Build Status|
 =====================================
 
-What’s HER?
+## What’s HER?
 -----------
 
 HER is text format, like XML/Json. The difference is that HER is easier
@@ -13,7 +13,7 @@ than others. Just see:
     * Array[] = "Umh, that's pretty good!"
 ```
 
-Why shall I use HER?
+## Why shall I use HER?
 --------------------
 
 As I said before, HER is **simple** and **easy to use**. You can pass
@@ -38,7 +38,8 @@ Feel the difference:
     * Greetings[] = "Spam, PHP, Eggs"
 ```
 
-**Help**
+## Help
+-----------
 - [Ask for help](https://github.com/TRIGGEREDNICK/HER/issues)
 - [Fix something](https://github.com/TRIGGEREDNICK/HER/pulls)
 - [Original Repo](https://github.com/hearot/HER/)
